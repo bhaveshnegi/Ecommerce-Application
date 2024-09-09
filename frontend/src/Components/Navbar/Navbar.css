@@ -44,7 +44,7 @@
     color: #007bff;
     transform: translateY(-2px);
   }
-  .nav-menu li:hover::after {
+  /* .nav-menu li:hover::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -52,7 +52,7 @@
     background-color: #007bff;
     left: 0;
     bottom: -5px;
-  }
+  } */
   
   .nav-login-cart {
     display: flex;
