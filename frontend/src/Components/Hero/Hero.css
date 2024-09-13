@@ -1,3 +1,5 @@
+/* Enhanced Hero.css with Modern Effects */
+
 .hero {
     display: flex;
     justify-content: space-between;
@@ -6,11 +8,19 @@
     background: linear-gradient(180deg, #f8def4 0%, #e2e0ff 100%);
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
+    background-attachment: fixed; /* Parallax Effect */
+    animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Fade In Effect */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 .hero-left {
-    flex: 1 1;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,6 +28,13 @@
     max-width: 50%;
     padding-right: 2rem;
     margin-top: -250px;
+    opacity: 0;
+    animation: slideInLeft 1s forwards ease-in-out 0.5s; /* Smooth entrance */
+}
+
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
 .hero-left h2 {
@@ -27,14 +44,22 @@
     margin-bottom: 1rem;
     text-transform: uppercase;
     font-weight: 500;
+    background: linear-gradient(45deg, #ff5959, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient Text */
 }
 
 .hero-left p {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
     color: #111;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.hero-left p:hover {
+    color: #007bff;
 }
 
 .hand-hand-icon {
@@ -45,29 +70,13 @@
     color: #111;
     position: relative;
     animation: wave 1s infinite;
+    opacity: 0;
+    animation: slideInRight 1s forwards ease-in-out 0.8s; /* Delayed entrance */
 }
 
-.hand-hand-icon img {
-    width: 55px;
-    height: 55px;
-    margin-left: 15px;
-}
-
-@keyframes wave {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
-    60% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
-}
-
-.hero-left p {
-    font-size: 4rem;
-    color: #111;
-    margin: 0.1rem;
+@keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(100px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
 .hero-latest-btn {
@@ -84,18 +93,19 @@
     cursor: pointer;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    position: relative;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 20px rgba(255, 89, 89, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(255, 89, 89, 0.7); }
+    100% { box-shadow: 0 0 20px rgba(255, 89, 89, 0.4); }
 }
 
 .hero-latest-btn:hover {
     background: #d80000;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    transform: translateY(-3px);
-}
-
-.hero-latest-btn img {
-    margin-left: 1rem;
-    width: 22px;
-    height: 22px;
+    transform: translateY(-5px);
 }
 
 .hero-right {
@@ -104,6 +114,14 @@
     justify-content: flex-end;
     position: relative;
     z-index: 1;
+    max-width: 100%;
+    opacity: 0;
+    animation: zoomIn 1s forwards ease-in-out 1s; /* Smooth entrance */
+}
+
+@keyframes zoomIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 .hero-right img {
@@ -116,10 +134,23 @@
 }
 
 .hero-right img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff5959;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+
+/* Tablets */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -130,6 +161,7 @@
     .hero-left {
         max-width: 100%;
         padding-right: 0;
+        margin-top: 0;
     }
 
     .hero-right {
@@ -140,15 +172,45 @@
         width: 80%;
     }
 
-    .hero-left h1 {
-        font-size: 3.5rem;
+    .hero-left h2 {
+        font-size: 2.2rem;
     }
 
     .hero-left p {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .hero-latest-btn {
         padding: 1rem 2rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .hero-left {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .hero-left h2 {
+        font-size: 2rem;
+    }
+
+    .hero-left p {
+        font-size: 2.2rem;
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    .hero-latest-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
     }
 }

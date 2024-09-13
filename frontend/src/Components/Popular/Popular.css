@@ -1,23 +1,161 @@
-.popular{
+/* Popular Section */
+.popular {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    height: 90vh;
+    gap: 20px; /* Slightly increased gap for breathing room */
+    min-height: 80vh;
+    padding: 3rem 1.5rem;
+    background: linear-gradient(145deg, #f0f0f0, #eaeaea); /* Modern gradient background */
+    text-align: center;
 }
-.popular h1{
+
+.popular h1 {
     color: #171717;
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
 }
-.popular hr{
+
+.popular hr {
     width: 200px;
     height: 6px;
     border-radius: 10px;
     background: #252525;
+    margin-top: 1rem;
 }
-.popular-item{
-    margin-top: 50px;
+
+.popular-item {
+    margin-top: 30px; /* Reduced margin for tighter layout */
     display: flex;
-    gap: 30px;
+    gap: 25px;
+    flex-wrap: wrap; /* Responsive wrapping */
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.popular-item:hover {
+    transform: scale(1.02); /* Subtle hover zoom on entire section */
+}
+
+/* Popular Items */
+.popular-item .card {
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Softer shadows */
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 280px; /* Smaller card size for more compact design */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.popular-item .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.popular-item .card:hover::before {
+    left: 100%;
+}
+
+.popular-item .card:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* More shadow on hover */
+}
+
+.popular-item .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.popular-item .card:hover img {
+    transform: scale(1.1); /* Image zoom on hover */
+}
+
+.popular-item .card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.popular-item .card:hover h3 {
+    color: #007bff; /* Change title color on hover */
+}
+
+.popular-item .card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .popular h1 {
+        font-size: 2.5rem;
+    }
+
+    .popular-item {
+        gap: 20px;
+    }
+
+    .popular-item .card {
+        width: 240px; /* Smaller cards for tablets */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .popular {
+        padding: 1.5rem 1rem;
+    }
+
+    .popular h1 {
+        font-size: 2rem;
+    }
+
+    .popular-item {
+        gap: 15px;
+    }
+
+    .popular-item .card {
+        width: 200px; /* Smaller cards for mobile */
+        padding: 1rem;
+    }
+
+    .popular-item .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .popular-item .card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    .popular h1 {
+        font-size: 1.8rem;
+    }
+
+    .popular-item .card {
+        width: 180px; /* Smaller for very small screens */
+    }
 }

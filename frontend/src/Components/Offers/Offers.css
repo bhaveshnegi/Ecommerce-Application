@@ -1,47 +1,158 @@
-.offers{
-    width: 68%;
-    height: 60vh;
+/* Offers Section */
+.offers {
+    width: 100%; /* Full width to ensure responsiveness */
+    height: auto; /* Allow height to adjust based on content */
     display: flex;
-    margin: 90px;
-    padding: 0px 140px;
-    margin-bottom: 150px;
-    background: linear-gradient(180deg,#fde1ff 0%,#e1ffea22 60%);
+    flex-wrap: wrap; /* Flex wrap for responsive behavior */
+    margin: 90px 0;
+    padding: 50px 20px; /* Adjusted padding for smaller screens */
+    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    justify-content: center; /* Center content for smaller screens */
+    align-items: center;
+    border-radius: 20px; /* Added border-radius for smoother corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
 }
-.offer-left{
+
+.offer-left {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px; /* Added padding to ensure content doesn't get cramped */
 }
-.offer-left h1{
+
+.offer-left h1 {
     color: #171717;
-    font-size: 80px;
+    font-size: 4rem; /* Reduced font size for better scalability */
     font-weight: 600;
     margin: 0;
+    line-height: 1.2;
+    transition: color 0.3s ease;
 }
-.offer-left p{
+
+.offer-left h1:hover {
+    color: #007bff; /* Interactive color change on hover */
+}
+
+.offer-left p {
     color: #171717;
-    font-size: 22px;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin: 0;
+    margin-top: 20px; /* Increased margin for better spacing */
 }
-.offer-left button{
-    width: 282px;
-    height: 70px;
+
+.offer-left button {
+    width: 250px;
+    height: 60px;
     border-radius: 35px;
     background-color: #ff4141;
     border: none;
     color: white;
-    font-size: 22px;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-top: 30px;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.offer-right{
+
+.offer-left button:hover {
+    background-color: #d80000;
+    box-shadow: 0 10px 25px rgba(255, 65, 65, 0.4);
+}
+
+.offer-right {
     flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
-    padding-top: 50px;
-    margin-top: 15px;
+    padding-top: 20px;
+    margin-top: 0;
+}
+
+.offer-right img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px; /* Smooth corners for images */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Image shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-right img:hover {
+    transform: scale(1.05); /* Image zoom on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .offers {
+        flex-direction: column; /* Stack content vertically */
+        padding: 40px 30px;
+    }
+
+    .offer-left h1 {
+        font-size: 3rem; /* Reduced font size for tablets */
+    }
+
+    .offer-left p {
+        font-size: 1.2rem; /* Reduced paragraph size */
+    }
+
+    .offer-left button {
+        width: 220px;
+        height: 55px; /* Smaller button for tablets */
+        font-size: 1.1rem;
+    }
+
+    .offer-right img {
+        max-width: 70%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .offers {
+        padding: 30px 15px;
+        margin: 60px 0; /* Reduced margin for mobile */
+    }
+
+    .offer-left h1 {
+        font-size: 2.5rem; /* Further reduced heading size */
+    }
+
+    .offer-left p {
+        font-size: 1rem; /* Smaller paragraph for mobile */
+    }
+
+    .offer-left button {
+        width: 200px;
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    .offer-right img {
+        max-width: 90%; /* Larger image for mobile */
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    .offer-left h1 {
+        font-size: 2rem; /* Adjusted for extra small screens */
+    }
+
+    .offer-left p {
+        font-size: 0.9rem;
+    }
+
+    .offer-left button {
+        width: 180px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+
+    .offer-right img {
+        max-width: 100%; /* Full width image for small devices */
+    }
 }
