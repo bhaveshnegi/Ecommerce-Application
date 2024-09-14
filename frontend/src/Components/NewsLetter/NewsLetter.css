@@ -1,6 +1,6 @@
-.newsletter{
+.newsletter {
     width: 65%;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,51 +8,153 @@
     margin: auto;
     padding: 0px 140px;
     margin-bottom: 150px;
-    background: linear-gradient(180deg,#fde1ff 0%,#e1ffea22 60%);
+    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
     gap: 30px;
     margin-top: -120px;
+    border-radius: 15px; /* Added rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth transformation effect */
 }
 
-.newsletter h1{
-    color: #454545;
-    font-size: 55px;
+.newsletter:hover {
+    transform: translateY(-10px); /* Lifting effect on hover */
+}
+
+.newsletter h1 {
+    color: #333;
+    font-size: 3.5rem;
     font-weight: 600;
     margin: 0;
     margin-top: 30px;
+    text-align: center;
+    letter-spacing: 1px; /* Improved letter spacing for readability */
+    text-transform: uppercase; /* Uppercase for a bolder look */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
-.newsletter p{
+
+.newsletter p {
     color: #454545;
-    font-size: 20px;
+    font-size: 1.25rem;
+    text-align: center;
+    max-width: 700px; /* Restrict width for readability */
+    line-height: 1.5; /* Enhanced line-height for better spacing */
 }
-.newsletter div{
+
+.newsletter div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: white;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 70px;
-    border-radius: 80px;
+    border-radius: 50px; /* Softer, rounded border radius */
     border: 1px solid #e3e3e3;
+    padding: 0 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease-in-out;
 }
-.newsletter input{
-    width: 500px;
-    margin-left: 30px;
+
+.newsletter div:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.newsletter input {
+    width: 100%;
+    max-width: 450px;
+    margin-left: 15px;
     border: none;
     outline: none;
     color: #616161;
-    font-family: Poppins;
-    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 10px 0; /* Padding for better usability */
+    background: transparent; /* Transparent background */
 }
-.newsletter div button{
-    width: 210px;
-    height: 70px;
-    border-radius: 80px;
+
+.newsletter input::placeholder {
+    color: #9e9e9e; /* Lighter placeholder text color */
+}
+
+.newsletter div button {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px; /* Softer, pill-shaped button */
     background: black;
     color: white;
     font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
-.newsletter div button:hover{
-    transform: scale(1.05);
-    transition: 0.1s;
+
+.newsletter div button:hover {
+    background: #333; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+@media (max-width: 768px) {
+    .newsletter {
+        width: 90%;
+        padding: 0 40px;
+        margin-top: -80px;
+        gap: 20px;
+    }
+
+    .newsletter h1 {
+        font-size: 2.5rem;
+    }
+
+    .newsletter p {
+        font-size: 1.1rem;
+    }
+
+    .newsletter div {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .newsletter input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .newsletter div button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter {
+        width: 95%;
+        padding: 0 20px;
+        margin-top: -50px;
+        gap: 20px;
+    }
+
+    .newsletter h1 {
+        font-size: 2rem;
+    }
+
+    .newsletter p {
+        font-size: 1rem;
+    }
+
+    .newsletter div {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .newsletter input {
+        width: 100%;
+    }
+
+    .newsletter div button {
+        width: 100%;
+        font-size: 14px;
+    }
 }

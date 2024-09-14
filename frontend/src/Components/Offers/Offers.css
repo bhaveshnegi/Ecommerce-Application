@@ -4,7 +4,7 @@
     height: auto; /* Allow height to adjust based on content */
     display: flex;
     flex-wrap: wrap; /* Flex wrap for responsive behavior */
-    margin: 90px 0;
+    margin: 30px 0px;
     padding: 50px 20px; /* Adjusted padding for smaller screens */
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
     justify-content: center; /* Center content for smaller screens */

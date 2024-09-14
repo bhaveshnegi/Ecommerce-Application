@@ -2,9 +2,46 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color:#5e5e5e;
+    color: #5e5e5e;
     font-size: 16px;
     font-weight: 600;
-    margin: 60px 170px;
+    margin: 20px auto; /* Center align and adjust margin for responsiveness */
+    max-width: 1200px; /* Restrict maximum width */
+    padding: 0 20px; /* Add padding for better spacing */
     text-transform: capitalize;
+}
+
+.breadcrum a {
+    color: #5e5e5e;
+    text-decoration: none;
+}
+
+.breadcrum a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.breadcrum span {
+    color: #ff4141; /* Color for the current breadcrumb */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .breadcrum {
+        margin: 20px 20px; /* Adjust margins for medium screens */
+        font-size: 15px; /* Slightly smaller font size */
+    }
+}
+
+@media (max-width: 900px) {
+    .breadcrum {
+        font-size: 14px; /* Further reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .breadcrum {
+        font-size: 13px; /* Smallest font size for mobile */
+        gap: 4px; /* Reduced gap for smaller screens */
+        margin: 10px 10px; /* Further reduced margins */
+    }
 }

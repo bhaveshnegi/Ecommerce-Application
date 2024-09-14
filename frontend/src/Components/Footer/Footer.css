@@ -1,41 +1,63 @@
-.footer{
+/* General Styles */
+.footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 50px;
+    padding: 20px;
+    background-color: #f8f8f8; /* Light background for contrast */
 }
-.footer-logo{
+
+.footer-logo {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.footer-logo p{
+
+.footer-logo p {
     color: #383838;
     font-size: 46px;
     font-weight: 700;
+    margin: 0;
 }
-.footer-links{
+
+.footer-links {
     display: flex;
     list-style: none;
     gap: 50px;
     color: #252525;
     font-size: 20px;
 }
-.footer-links li{
+
+.footer-links li {
     cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
-.footer-social-icon{
+
+.footer-links li:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.footer-social-icon {
     display: flex;
     gap: 20px;
 }
-.footer-icon-container{
+
+.footer-icon-container {
     padding: 10px;
     padding-bottom: 6px;
     background: #fbfbfb;
     border: 1px solid #ebebeb;
+    border-radius: 50%; /* Round icons */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
 }
-.footer-copy-right{
+
+.footer-icon-container:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+.footer-copy-right {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,10 +67,76 @@
     color: #1a1a1a;
     font-size: 20px;
 }
-.footer-copy-right hr{
+
+.footer-copy-right hr {
     width: 80%;
     border: none;
     border-radius: 10px;
     height: 5px;
     background: #c7c7c7;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .footer-links {
+        gap: 30px;
+        font-size: 18px;
+    }
+
+    .footer-logo p {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .footer {
+        gap: 30px;
+    }
+
+    .footer-logo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 18px;
+        text-align: center; /* Center align text for smaller screens */
+    }
+
+    .footer-social-icon {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-copy-right {
+        font-size: 18px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .footer-logo p {
+        font-size: 32px;
+    }
+
+    .footer-links {
+        font-size: 16px;
+        gap: 15px;
+    }
+
+    .footer-social-icon {
+        gap: 8px;
+    }
+
+    .footer-copy-right {
+        font-size: 16px;
+        gap: 15px;
+    }
 }
