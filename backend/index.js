@@ -75,8 +75,16 @@ const Product = mongoose.model("Product",{
 })
 
 app.post('/addproduct',async(req,res)=>{
+    let products = await Product.find({});
+    let id;
+    if(products.length > 0){
+        id = products[products.length - 1].id + 1;
+    }
+    else{
+        id=1;
+    }
     const product = new Product({
-        id:req.body.id,
+        id:id,
         name:req.body.name,
         image:req.body.image,
         category:req.body.category,
@@ -92,6 +100,15 @@ app.post('/addproduct',async(req,res)=>{
     })
 })
 
+// Creating api to deleting product
+app.post('/removeproduct',async(req,res)=>{
+    const product = await Product.findOneAndDelete({id:req.body.id});
+    console.log("Removed")
+    res.json({
+        success:true,
+        name:product.name,
+    })
+})
 
 app.listen(port, (error) => {
     if (!error) {
