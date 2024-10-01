@@ -110,6 +110,13 @@ app.post('/removeproduct',async(req,res)=>{
     })
 })
 
+//Creating api for getting all product
+app.get('/allproducts',async(req,res)=>{
+    let products = await Product.find({});
+    console.log("All product fetched");
+    res.send(products);
+})
+
 app.listen(port, (error) => {
     if (!error) {
         console.log(`server is running on port ${port}`);
