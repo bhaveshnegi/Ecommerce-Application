@@ -2,14 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    height: 90vh;
+    gap: 20px;
+    margin-bottom: 100px;
+    padding: 3rem 1.5rem;
+    min-height: 80vh;
+    text-align: center;
+    width: 95%;
 }
 
 .relatedproduct h1 {
     color: #171717;
-    font-size: 50px;
+    font-size: clamp(30px, 5vw, 50px);
     font-weight: 600;
+    text-align: center;
 }
 
 .relatedproduct hr {
@@ -20,7 +25,49 @@
 }
 
 .relatedproduct-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 50px;
-    display: flex;
-    gap: 30px;   
+    gap: 30px;
+    margin-bottom: 100px;
+    padding: 0 30px; /* Adjust padding to match navbar */
+}
+
+/* Responsive for screens 1280px and below */
+@media (max-width: 1280px) {
+    .relatedproduct-item {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+    }
+
+    .relatedproduct h1 {
+        font-size: clamp(28px, 5vw, 45px);
+    }
+}
+
+/* Responsive for screens 800px and below */
+@media (max-width: 800px) {
+    .relatedproduct-item {
+        grid-template-columns: 1fr 1fr; /* 2 columns for 800px and below */
+        gap: 20px;
+    }
+
+    .relatedproduct h1 {
+        font-size: clamp(25px, 5vw, 40px);
+    }
+
+    .relatedproduct hr {
+        width: 150px;
+    }
+
+    .relatedproduct-item {
+        padding: 0 30px; /* Adjust padding to match navbar */
+    }
+}
+
+/* Responsive for screens 600px and below */
+@media (max-width: 600px) {
+    .relatedproduct-item {
+        grid-template-columns: 1fr; /* 1 column for smaller screens */
+    }
 }

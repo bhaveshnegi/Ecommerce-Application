@@ -153,7 +153,7 @@
 }
 
 /* Tablets */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .navbar {
     padding: 10px 30px;
   }
@@ -175,48 +175,3 @@
   }
 }
 
-/* Mobile devices */
-@media (max-width: 480px) {
-  .navbar {
-    padding: 10px 20px;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .nav-logo img {
-    width: 30px;
-  }
-  .nav-logo p {
-    font-size: 18px;
-  }
-  .nav-menu {
-    display: none; /* Hide menu on mobile */
-  }
-  .nav-login-cart {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .nav-login-cart button {
-    width: 100px;
-    font-size: 14px;
-  }
-
-  /* Mobile menu button */
-  .mobile-menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #007bff;
-    border: none;
-    color: white;
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .mobile-menu-button:hover {
-    background-color: #0056b3;
-  }
-}
