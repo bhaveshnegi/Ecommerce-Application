@@ -1,0 +1,26 @@
+.success-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.success-header {
+    color: green;
+    font-size: 2rem;
+}
+
+.success-message {
+    font-size: 1.2rem;
+}
+
+.order-summary {
+    margin: 20px 0;
+}
+
+.continue-shopping-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}

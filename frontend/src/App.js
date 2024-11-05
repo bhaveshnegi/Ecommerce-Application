@@ -10,6 +10,9 @@ import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png';
 import women_banner from './Components/Assets/banner_women.png';
 import kids_banner from './Components/Assets/banner_kids.png';
+import PaymentPage from './Components/Payment/PaymentPage';
+import SuccessPage from './Components/Payment/SuccessPage';
+import FailurePage from './Components/Payment/FailurePage';
 
 const App = () => {
   return (
@@ -25,6 +28,9 @@ const App = () => {
           <Route path='/product/:productId' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/login' element={<LoginSignup />} />
+          <Route path="/payment" element={<PaymentPage totalAmount={100} />}/>
+            <Route path="/success" element={<SuccessPage />} />
+            <Route path="/failure" element={<FailurePage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

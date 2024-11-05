@@ -1,0 +1,22 @@
+.failure-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.failure-header {
+    color: red;
+    font-size: 2rem;
+}
+
+.failure-message {
+    font-size: 1.2rem;
+}
+
+.retry-payment-button {
+    background-color: #FFC107;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
