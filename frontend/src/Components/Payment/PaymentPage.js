@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./payment.css"
+import { ShopContext } from '../../Context/ShopContext'
 
 const PaymentPage = ({ totalAmount }) => {
+    const { getTotalCartAmout} = useContext(ShopContext);
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
     const [cvv, setCvv] = useState('');
@@ -95,7 +97,7 @@ const PaymentPage = ({ totalAmount }) => {
                         />
                     </div>
                     <button type="submit" disabled={loading}>
-                        {loading ? 'Processing...' : `Pay $${totalAmount}`}
+                        {loading ? 'Processing...' : `Pay $${getTotalCartAmout()}`}
                     </button>
                 </form>
                 {paymentStatus && <p className="payment-status">{paymentStatus}</p>}
